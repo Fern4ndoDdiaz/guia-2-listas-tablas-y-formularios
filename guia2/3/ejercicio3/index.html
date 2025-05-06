@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Formulario CV</title>
+  <style>
+    body { background-color: #fff0f5; font-family: Tahoma; padding: 40px; text-align: center; }
+    form { display: inline-block; text-align: left; }
+    fieldset { margin-bottom: 20px; border: 2px solid #ccc; padding: 15px; }
+    legend { font-weight: bold; }
+    label { display: inline-block; width: 150px; margin-top: 10px; }
+    input, select { margin-top: 10px; padding: 4px; }
+  </style>
+</head>
+<body>
+  <h2>CURRICULUM VITAE</h2>
+  <form id="cvForm">
+    <fieldset>
+      <legend>Datos personales</legend>
+      <label>Nombres:</label><input type="text" id="nombres"><br>
+      <label>Apellidos:</label><input type="text" id="apellidos"><br>
+      <label>Estado Civil:</label>
+      <select id="estadoCivil">
+        <option>Soltero</option>
+        <option>Casado</option>
+        <option>Divorciado</option>
+      </select><br>
+      <label>Edad:</label><input type="number" id="edad"><br>
+      <label>Dirección:</label><input type="text" id="direccion"><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Estudios Realizados</legend>
+      <label>Educación Básica:</label><input type="text" id="basica"><br>
+      <label>Año de Graduación:</label><input type="text" id="anioBasica"><br>
+      <label>Bachillerato:</label><input type="text" id="bachillerato"><br>
+      <label>Año de Graduación:</label><input type="text" id="anioBachi"><br>
+    </fieldset>
+
+    <input type="button" value="Guardar" onclick="guardar()">
+    <input type="reset" value="Limpiar">
+  </form>
+
+  <script>
+    function guardar() {
+      const datos = {
+        nombres: document.getElementById('nombres').value,
+        apellidos: document.getElementById('apellidos').value,
+        estadoCivil: document.getElementById('estadoCivil').value,
+        edad: document.getElementById('edad').value,
+        direccion: document.getElementById('direccion').value,
+        basica: document.getElementById('basica').value,
+        anioBasica: document.getElementById('anioBasica').value,
+        bachillerato: document.getElementById('bachillerato').value,
+        anioBachi: document.getElementById('anioBachi').value
+      };
+      localStorage.setItem('cvDatos', JSON.stringify(datos));
+      alert('Datos guardados en el navegador');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Listas Navegables</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; background-color: #e6f2ff; padding: 40px; }
+    section { display: none; margin-top: 30px; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Ejercicio 1 - Listas HTML Interactivas</h1>
+
+  <div>
+    <button onclick="mostrar('comidas')">Comidas favoritas</button>
+    <button onclick="mostrar('fifa')">Ranking FIFA</button>
+    <button onclick="mostrar('jugadores')">Jugadores legendarios</button>
+  </div>
+
+  <section id="comidas">
+    <h2>Mis comidas favoritas</h2>
+    <ul>
+      <li>Fabada</li>
+      <li>Arroz con tomate y huevo frito</li>
+      <li>Salmón con queso de cabra</li>
+      <li>Migas extremeñas</li>
+      <li>Salmorejo</li>
+    </ul>
+    <button onclick="volver()">Volver</button>
+  </section>
+
+  <section id="fifa">
+    <h2>Ranking FIFA marzo 2021</h2>
+    <ol>
+      <li>Bélgica</li>
+      <li>Francia</li>
+      <li>Brasil</li>
+      <li>Inglaterra</li>
+      <li>Portugal</li>
+    </ol>
+    <button onclick="volver()">Volver</button>
+  </section>
+
+  <section id="jugadores">
+    <h2>Jugadores de fútbol de leyenda</h2>
+    <ul>
+      <li>España
+        <ul>
+          <li>Casillas</li>
+          <li>Xavi</li>
+          <li>Iniesta</li>
+        </ul>
+      </li>
+      <li>Francia
+        <ul>
+          <li>Zidane</li>
+          <li>Henry</li>
+          <li>Barthez</li>
+        </ul>
+      </li>
+      <li>Brasil
+        <ul>
+          <li>Ronaldo</li>
+          <li>Pelé</li>
+          <li>Ronaldinho</li>
+        </ul>
+      </li>
+    </ul>
+    <button onclick="volver()">Volver</button>
+  </section>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+    function volver() {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+    }
+  </script>
+</body>
+</html>

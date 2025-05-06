@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2 - Tablas Navegables</title>
+  <style>
+    body { background-color: #f0fff0; font-family: Verdana; padding: 40px; text-align: center; }
+    section { display: none; margin-top: 20px; }
+    table { margin: auto; border-collapse: collapse; width: 80%; }
+    th, td { border: 1px solid #000; padding: 10px; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Ejercicio 2 - Tablas de Datos</h1>
+
+  <div>
+    <button onclick="mostrar('animales')">Animales</button>
+    <button onclick="mostrar('personal')">Personal técnico</button>
+  </div>
+
+  <section id="animales">
+    <h2>Animales en peligro de extinción</h2>
+    <table>
+      <tr><th>Nombre</th><th>Cabezas</th><th>Previsión 2010</th><th>Previsión 2020</th></tr>
+      <tr><td>Ballena</td><td>6000</td><td>4000</td><td>1500</td></tr>
+      <tr><td>Oso Pardo</td><td>50</td><td style="background-color:red"></td><td></td></tr>
+      <tr><td>Lince</td><td>10</td><td></td><td style="background-color:red">0</td></tr>
+      <tr><td>Tigre</td><td>300</td><td></td><td>210</td></tr>
+    </table>
+    <button onclick="volver()">Volver</button>
+  </section>
+
+  <section id="personal">
+    <h2>Personal técnico en enfermería</h2>
+    <table>
+      <tr><th rowspan="2">Área</th><th colspan="2">Sexo</th><th rowspan="2">Total</th></tr>
+      <tr><th>Hombres</th><th>Mujeres</th></tr>
+      <tr><td>Consultorios externos</td><td>2</td><td>18</td><td>20</td></tr>
+      <tr><td>Hospitalización</td><td>6</td><td>14</td><td>20</td></tr>
+      <tr><td>Laboratorios y otros</td><td>2</td><td>18</td><td>20</td></tr>
+      <tr><th>Total</th><th>10</th><th>50</th><th>60</th></tr>
+    </table>
+    <button onclick="volver()">Volver</button>
+  </section>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+    function volver() {
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+    }
+  </script>
+</body>
+</html>
